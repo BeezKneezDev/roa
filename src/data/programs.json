@@ -1,0 +1,62 @@
+[
+    {
+        "id": 0,
+        "heading": "Reo Programmes",
+        "subheading": "",
+        "blurb": "<p>Rau-Kura Fosters a love of te reo Māori within learners and teachers by equiping them with the tools and practices to succeed in their journey. </p><p>Our personalised approach to teaching, coaching, and tutoring is designed to breakdown barriers that get in the way of growth and development. We empower confidence and courage in engaging with Te Ao Māori and speaking Te Reo Māori.</p>",
+        "price": "",
+        "offers": "",
+        "includes": "",
+        "classes": ""
+    },
+    {
+        "id": 1,
+        "heading": "Office Basic",
+        "subheading": "",
+        "price": "$5,000 fixed",
+        "offers": "<p>1 hour session / week or fortnight = 10 total sessions Focus on pronunciation & vocabulary (Only one beginners subject).</p><p>$20 per 25 participants each session up to 30 participants per class Online/Offline options.</p>",
+        "includes": "<ul><li>Learning agenda</li><li>Scheduling</li><li>Google classroom</li><li>Lesson planning & design</li><li>Quality assurance</li><li>Zoom subscription</li><li>Lesson delivery</li><li>Ongoing coordination between Roa Ltd, Kaiako, participants, and organization</li><li>Attendance, evaluation & progress report</li></ul>",
+        "classes": "flex "
+    },
+    {
+        "id": 2,
+        "heading": "Office Basic",
+        "subheading": "Supplementary option 1",
+        "price": "$1,000",
+        "offers": "2 x 1 hour sessions",
+        "includes": "<p>Hui Whakawātea are specialized sessions designed to assist participants in identifying barriers in their engagement and use of te reo Māori, and to guide them in devising strategies to overcome these barriers. The intention is for participants to gain freedom from their barriers, and transform the way they interact with Te Reo Māori. This expense will cover additional research, curriculum modifications, and quality assurance from the appropriate advisors.</p>"
+    },
+    {
+        "id": 3,
+        "heading": "Office Basic",
+        "subheading": "Supplementary option 2",
+        "price": "$1,500",
+        "offers": "10 sessions with localized reo",
+        "includes": "<p>Roa Ltd primarily centers its attention on the standard application of Te Reo Māori, with a predominant inclination toward Te Reo o Waikato-Tainui. Nonetheless, we possess the capability to tailor the curriculum to several distinct dialects, both within our regions and beyond.</p>"
+    },
+    {
+        "id": 4,
+        "classes": "flex",
+        "heading": "Office Premium",
+        "subheading": "",
+        "price": "$20,000",
+        "offers": "<ul><li>1 hour session / week</li><li>Hui Whakawātea</li><li>Tākaro-tahi & Kai-tahi</li><li>total 32 sessions (various subjects)</li><li>Focus on pronunciation, vocab extension, & sentence structure in multiple contexts</li><li>$25 per 25 participants each session</li><li>up to 30 participants per class</li><li>Beginners/Intermediate</li><li>Online/offline</li></ul>",
+        "includes": "<ul><li>everything in the basic package +</li><li>Student booklets (up to 35 printed)</li><li>A variety of subjects from pronunciation, to workplace, office, and whānau related vocabulary, and simple conversations</li><li>1 x taster class</li><li>1 x end-of-year kaitahi + games day (all inclusive)</li><li>2 x hui whakawātea - specialized sessions designed to assist participants in identifying obstacles pertaining to learning and utilizing te reo Māori, guiding them in devising strategies to overcome these challenges</li></ul>"
+    },
+    {
+        "id": 5,
+        "heading": "Office Premium",
+        "subheading": "(PREMIUM) localized curriculum",
+        "price": "$5,000",
+        "offers": "32 lessons and lesson materials using localized reo",
+        "includes": "<p>Roa Ltd primarily centers its attention on the standard application of Te Reo Māori, with a predominant inclination toward Te Reo o Waikato-Tainui. Nonetheless, we possess the capability to tailor the curriculum to several distinct dialects, both within our regions and beyond.  This expense will cover additional research, curriculum modifications (for the 32 week plan), and quality assurance from the appropriate advisors.</p>"
+    },
+    {
+        "id": 6,
+        "heading": "Office Premium",
+        "subheading": "(Basic) hui whakawātea",
+        "price": "$8,000",
+        "offers": "2 x 1 hour sessions",
+        "includes": "<p>As Rau Māreikura, we approach storytelling with immense passion and recognize its ability to enhance the experience of second language learners. This specialized package leverages narratives to captivate interest, establish relatability, and significantly improve language retention <strong>for those at the intermediate level.</strong></p><p>This expense will cover additional research, design, and writing for the necessary curriculum adaptations.</p>"
+    }
+]
