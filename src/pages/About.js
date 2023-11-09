@@ -1,5 +1,5 @@
-import Header from "../components/Header";
-import Social from "../components/SocialIcons";
+import React, { useEffect, useState } from 'react';
+import SideBar from "../layouts/SideBar";
 import Slide2 from '../components/story/slide2';
 import Slide1 from '../components/story/slide1';
 import Slide3 from "../components/story/slide3";
@@ -14,7 +14,6 @@ import StorySlider from "../components/StorySlider";
 
 import { connect } from 'react-redux';
 import { setCurrentIndex } from "../slices/storySliderSlice";
-import SideBar from "../layouts/SideBar";
 
 const stories = [
   <Slide1 />,
@@ -31,6 +30,32 @@ const stories = [
 
 const About = ({ setCurrentIndex }) => {
 
+  const [isSidebarOpen, setSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen);
+  };
+
+  useEffect(() => {
+    // Function to handle window resize event
+    const handleResize = () => {
+      // Check the window width and set isSidebarOpen accordingly
+      if (window.innerWidth >= 1024) {
+        setSidebarOpen(true); // Show sidebar on large screens
+      } else {
+        setSidebarOpen(false); // Hide sidebar on smaller screens
+      }
+    };
+
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const handleButtonClick = function (index) {
     setCurrentIndex(index - 1); // Dispatch the setCurrentIndex action
   }.bind(this);
@@ -38,7 +63,16 @@ const About = ({ setCurrentIndex }) => {
   return (
     <div className="flex flex-no-wrap h-screen">
 
+      <button
+        className={`lg:hidden z-20 fixed top-0 left-0 m-4 bg-gray-500 p-2 rounded-lg text-white`}
+        onClick={toggleSidebar}
+      >
+        Menu
+      </button>
+
       <SideBar
+        isSidebarOpen={isSidebarOpen} // Pass the state to SideBar
+        toggleSidebar={toggleSidebar} // Pass the function to SideBar
         vision={'Transforming the accessibility and availability of Te Reo Māori resources.'}
         menuItems={[
           {

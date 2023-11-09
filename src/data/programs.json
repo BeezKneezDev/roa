@@ -16,7 +16,7 @@
         "price": "$5,000 fixed",
         "offers": "<p>1 hour session / week or fortnight = 10 total sessions Focus on pronunciation & vocabulary (Only one beginners subject).</p><p>$20 per 25 participants each session up to 30 participants per class Online/Offline options.</p>",
         "includes": "<ul><li>Learning agenda</li><li>Scheduling</li><li>Google classroom</li><li>Lesson planning & design</li><li>Quality assurance</li><li>Zoom subscription</li><li>Lesson delivery</li><li>Ongoing coordination between Roa Ltd, Kaiako, participants, and organization</li><li>Attendance, evaluation & progress report</li></ul>",
-        "classes": "flex "
+        "classes": ""
     },
     {
         "id": 2,
@@ -36,7 +36,7 @@
     },
     {
         "id": 4,
-        "classes": "flex",
+        "classes": "",
         "heading": "Office Premium",
         "subheading": "",
         "price": "$20,000",

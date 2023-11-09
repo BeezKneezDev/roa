@@ -19,20 +19,18 @@ const ContentSlider = ({ slides, currentIndex, setCurrentIndex }) => {
         setCurrentIndex(index);
     };
 
-    const leftColClasses = slides[currentIndex].classes ? 'basis-1/2 pr-4' : '';
-    const rightColClasses = slides[currentIndex].classes ? 'basis-1/2 pl-4' : '';
+    const leftColClasses = slides[currentIndex].classes ? 'basis-1/2 lg:pr-4' : '';
+    const rightColClasses = slides[currentIndex].classes ? 'basis-1/2 lg:pl-4' : '';
 
 
     return (
-        <div className="content-slider m-auto relative">
-            <button className="prev-button" onClick={goToPreviousSlide}>
-                <IconLeft />
-            </button>
+        <div className="content-slider m-auto relative pt-20 lg:py-12">
+
             <div className="slide ">
-                <div className=" m-auto w-[800px] ">
+                <div className=" m-auto lg:w-[780px] px-8 lg:px-2  ">
                     <h2 className=" text-white text-center text-5xl font-medium pb-4">{slides[currentIndex].heading}</h2>
                     <h3 className=" text-white text-center text-lg font-medium pb-4">{slides[currentIndex].subheading}</h3>
-                    <div className=" bg-white p-12 rounded-lg shadow-xl">
+                    <div className=" bg-white p-8 lg:p-12 rounded-lg shadow-xl">
                         <span className=" block text-center text-4xl font-semibold pb-2">{slides[currentIndex].price}</span>
 
                         <div className={slides[currentIndex].classes}>
@@ -51,9 +49,15 @@ const ContentSlider = ({ slides, currentIndex, setCurrentIndex }) => {
                     </div>
                 </div>
             </div>
-            <button className="next-button" onClick={goToNextSlide}>
-                <IconRight />
-            </button>
+
+            <div className='text-center py-10'>
+                <button className="prev-button px-2" onClick={goToPreviousSlide}>
+                    <IconLeft />
+                </button>
+                <button className="next-button px-2" onClick={goToNextSlide}>
+                    <IconRight />
+                </button>
+            </div>
 
 
         </div>

@@ -1,25 +1,56 @@
-import { Link } from "react-router-dom";
-import Social from "../components/SocialIcons";
+import { connect } from 'react-redux';
+import SideBar from "../layouts/SideBar";
+import slides from '../data/programs.json'
+import React, { useEffect, useState } from 'react';
+import { setCurrentIndex } from "../slices/sliderSlice";
 import ContentSlider from './../components/ContentSlider';
 
-import { connect } from 'react-redux';
-import { setCurrentIndex } from "../slices/sliderSlice";
-
-import slides from '../data/programs.json'
-import MenuItem from "../components/MenuItem";
-import Header from "../components/Header";
-import SideBar from "../layouts/SideBar";
 
 const KuraReo = ({ setCurrentIndex }) => {
+    const [isSidebarOpen, setSidebarOpen] = useState(true);
+
+    const toggleSidebar = () => {
+        setSidebarOpen(!isSidebarOpen);
+    };
+
+    useEffect(() => {
+        // Function to handle window resize event
+        const handleResize = () => {
+            // Check the window width and set isSidebarOpen accordingly
+            if (window.innerWidth >= 1024) {
+                setSidebarOpen(true); // Show sidebar on large screens
+            } else {
+                setSidebarOpen(false); // Hide sidebar on smaller screens
+            }
+        };
+
+        // Add event listener for window resize
+        window.addEventListener('resize', handleResize);
+
+        // Clean up the event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     const handleButtonClick = function (index) {
         setCurrentIndex(index - 1); // Dispatch the setCurrentIndex action
     }.bind(this);
 
 
     return (
-        <div className="flex flex-no-wrap h-screen">
+        <div className="flex flex-no-wrap min-h-screen ">
+
+            <button
+                className={`lg:hidden z-20 fixed top-0 left-0 m-4 bg-gray-500 p-2 rounded-lg text-white`}
+                onClick={toggleSidebar}
+            >
+                Menu
+            </button>
 
             <SideBar
+                isSidebarOpen={isSidebarOpen} // Pass the state to SideBar
+                toggleSidebar={toggleSidebar} // Pass the function to SideBar
                 vision={'Delivering Te Reo Māori programmes that promote cultural intelligence while fostering a love for Te Reo Māori.'}
                 menuItems={[
                     {
@@ -62,8 +93,8 @@ const KuraReo = ({ setCurrentIndex }) => {
             />
 
 
-            <div className=" w-full h-full mx-auto" style={{ backgroundImage: `url("images/bg-green.jpg")` }}>
-                <div className="w-full h-full flex">
+            <div className=" w-full lg:min-h-full mx-auto" style={{ backgroundImage: `url("images/bg-green.jpg")` }}>
+                <div className="w-full h-full flex overflow-hidden">
                     <ContentSlider slides={slides} />
                 </div>
             </div>
@@ -76,4 +107,3 @@ const mapDispatchToProps = {
 };
 
 export default connect(null, mapDispatchToProps)(KuraReo);
-

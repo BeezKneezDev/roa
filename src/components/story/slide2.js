@@ -20,11 +20,11 @@ function Slide2() {
                         />
                         <ContentTile
                             heading={'Te Whāinga Matua'}
-                            description={'Our purpose is to share Te Reo Māori with the world by equipping learners with tools and practices to support their journey..'}
+                            description={'Our purpose is to share Te Reo Māori with the world by equipping learners with tools and practices to support their journey.'}
                         />
                         <ContentTile
                             heading={'Ngā Kaiarataki'}
-                            description={'Roa Ltd is managed by Hariru Roa, Dr Raukura Roa, Moana Turner, and Anne Roa and supported by Robyn Roa and Tom Roa..'}
+                            description={'Roa Ltd is managed by Hariru Roa, Dr Raukura Roa, Moana Turner, and Anne Roa and supported by Robyn Roa and Tom Roa.'}
                         />
                         <ContentTile
                             heading={'Ngā Tikanga'}

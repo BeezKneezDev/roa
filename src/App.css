@@ -1,5 +1,5 @@
 .content-slider {
-  display: flex;
+  //display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -7,10 +7,7 @@
 
 .prev-button,
 .next-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  
   font-size: 24px;
   background-color: transparent;
   border: none;
@@ -18,15 +15,41 @@
 }
 
 .prev-button {
+  left: 45%;
+}
+
+.next-button {
+  left: 53%;
+}
+
+
+
+.slide {
+  max-width: 100%;
+}
+
+@media only screen and (min-width: 1300px) {
+
+  .prev-button,
+  .next-button {
+    position: absolute;
+  bottom: -80px;
+
+  transform: translate(-50%, -50%);
+    top: 50%;
+    bottom: 0;
+    left: 50%;
+
+}
+
+.prev-button {
   left: -10%;
 }
 
 .next-button {
-  left: 110%;
+  left: 108%;
 }
 
-.slide {
-  max-width: 100%;
 }
 
 
