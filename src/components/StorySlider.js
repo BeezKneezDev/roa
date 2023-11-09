@@ -20,7 +20,7 @@ const StorySlider = ({ stories, currentIndex, setCurrentIndex }) => {
   return (
     <div className="story-slider w-full h-screen relative flex items-center " style={{ backgroundImage: `url("images/bg-white.jpg")` }}>
       {stories[currentIndex]}
-      <div className=' absolute  left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-0 bottom-20'>
+      <div className=' fixed  bottom-10 w-full  text-center story-nav'>
         <button onClick={goToPreviousSlide}>Previous</button> | <button onClick={goToNextSlide}>Next</button>
       </div>
     </div>
