@@ -40,7 +40,7 @@ const Main = ({vision, menuItems, children}) => {
     return (
 
 
-        <div className="flex flex-no-wrap h-screen">
+        <div className="flex flex-no-wrap min-h-screen">
 
             <button
                 className={`lg:hidden z-20 fixed top-0 left-0 m-4 bg-gray-500 p-2 rounded-lg text-white`}

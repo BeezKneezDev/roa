@@ -8,6 +8,7 @@ import { useLocation } from 'react-router-dom';
 const SideBar = ({ vision, menuItems, isSidebarOpen, toggleSidebar, sidebarHeight }, props) => {
     const location = useLocation();
 
+    
     return (
 
 
