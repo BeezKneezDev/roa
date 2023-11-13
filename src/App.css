@@ -1,3 +1,7 @@
+.dynamic-image {
+  max-height: inherit;
+}
+
 .content-slider {
   //display: flex;
   align-items: center;
