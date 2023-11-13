@@ -20,9 +20,9 @@ const KuraReo = ({ setCurrentIndex }) => {
     useEffect(() => {
         // Function to handle window resize event
         const handleResize = () => {
+            // Check the window width and set isSidebarOpen accordingly
             const documentHeight = document.documentElement.scrollHeight;
             setSidebarHeight(`${documentHeight}px`);
-            // Check the window width and set isSidebarOpen accordingly
             if (window.innerWidth >= 1024) {
                 setSidebarOpen(true); // Show sidebar on large screens
             } else {

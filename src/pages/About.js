@@ -41,12 +41,14 @@ const About = ({ setCurrentIndex }) => {
   useEffect(() => {
     // Function to handle window resize event
     const handleResize = () => {
-      // Check the window width and set isSidebarOpen accordingly
-      if (window.innerWidth >= 1024) {
-        setSidebarOpen(true); // Show sidebar on large screens
-      } else {
-        setSidebarOpen(false); // Hide sidebar on smaller screens
-      }
+        // Check the window width and set isSidebarOpen accordingly
+        const documentHeight = document.documentElement.scrollHeight;
+        setSidebarHeight(`${documentHeight}px`);
+        if (window.innerWidth >= 1024) {
+            setSidebarOpen(true); // Show sidebar on large screens
+        } else {
+            setSidebarOpen(false); // Hide sidebar on smaller screens
+        }
     };
 
     // Add event listener for window resize
@@ -54,9 +56,9 @@ const About = ({ setCurrentIndex }) => {
 
     // Clean up the event listener on component unmount
     return () => {
-      window.removeEventListener('resize', handleResize);
+        window.removeEventListener('resize', handleResize);
     };
-  }, []);
+}, []);
 
   const handleButtonClick = function (index) {
     setCurrentIndex(index - 1); // Dispatch the setCurrentIndex action
