@@ -8,7 +8,6 @@ import Slide5 from "../components/story/slide5";
 import Slide6 from "../components/story/slide6";
 import Slide7 from "../components/story/slide7";
 import Slide8 from "../components/story/slide8";
-import Slide9 from "../components/story/slide9";
 
 import StorySlider from "../components/StorySlider";
 
@@ -23,8 +22,7 @@ const stories = [
   <Slide5 />,
   <Slide6 />,
   <Slide7 />,
-  <Slide8 />,
-  <Slide9 />
+  <Slide8 />
 ];
 
 
@@ -32,8 +30,12 @@ const About = ({ setCurrentIndex }) => {
 
   const [isSidebarOpen, setSidebarOpen] = useState(true);
 
+  const [sidebarHeight, setSidebarHeight] = useState('100vh'); // Set an initial height, e.g., 100vh (100% of the viewport height)
+
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
+    const documentHeight = document.documentElement.scrollHeight;
+    setSidebarHeight(`${documentHeight}px`);
   };
 
   useEffect(() => {
@@ -61,7 +63,7 @@ const About = ({ setCurrentIndex }) => {
   }.bind(this);
 
   return (
-    <div className="flex flex-no-wrap h-screen">
+    <div className="flex flex-no-wrap min-h-screen">
 
       <button
         className={`lg:hidden z-20 fixed top-0 left-0 m-4 bg-gray-500 p-2 rounded-lg text-white`}
@@ -71,6 +73,7 @@ const About = ({ setCurrentIndex }) => {
       </button>
 
       <SideBar
+        sidebarHeight={sidebarHeight}
         isSidebarOpen={isSidebarOpen} // Pass the state to SideBar
         toggleSidebar={toggleSidebar} // Pass the function to SideBar
         vision={'Transforming the accessibility and availability of Te Reo Māori resources.'}

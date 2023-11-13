@@ -9,13 +9,19 @@ import ContentSlider from './../components/ContentSlider';
 const KuraReo = ({ setCurrentIndex }) => {
     const [isSidebarOpen, setSidebarOpen] = useState(true);
 
+    const [sidebarHeight, setSidebarHeight] = useState('100vh'); // Set an initial height, e.g., 100vh (100% of the viewport height)
+
     const toggleSidebar = () => {
         setSidebarOpen(!isSidebarOpen);
+        const documentHeight = document.documentElement.scrollHeight;
+        setSidebarHeight(`${documentHeight}px`);
     };
 
     useEffect(() => {
         // Function to handle window resize event
         const handleResize = () => {
+            const documentHeight = document.documentElement.scrollHeight;
+            setSidebarHeight(`${documentHeight}px`);
             // Check the window width and set isSidebarOpen accordingly
             if (window.innerWidth >= 1024) {
                 setSidebarOpen(true); // Show sidebar on large screens
@@ -49,6 +55,7 @@ const KuraReo = ({ setCurrentIndex }) => {
             </button>
 
             <SideBar
+                sidebarHeight={sidebarHeight}
                 isSidebarOpen={isSidebarOpen} // Pass the state to SideBar
                 toggleSidebar={toggleSidebar} // Pass the function to SideBar
                 vision={'Delivering Te Reo Māori programmes that promote cultural intelligence while fostering a love for Te Reo Māori.'}

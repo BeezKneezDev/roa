@@ -1,11 +1,12 @@
 import * as React from "react";
+import StaffProfile from "../StaffProfile";
 
 
 function Slide5() {
     return (
-        <div className=" flex">
+        <div className=" xl:flex px-5  py-20 lg:p-0">
             <div className=" basis-1/2 flex">
-                <div className=" m-auto p-28">
+                <div className=" xl:m-auto pt-10 px-10 xl:p-28">
                     <h3 className=" font-bold text-3xl ">Ngā Kaiarataki</h3>
                     <p className="text-lg font-medium">
                         <span className=" block text-blue-900">Who are our leaders?</span>
@@ -16,39 +17,36 @@ function Slide5() {
                         Tōmua ko te reo, tōmua ko te tikanga, tōmua ko te tangata. Tōmuri ko te pūtea, tōmuri ko te whakahīhī.</p>
                 </div>
             </div>
-            <div className=" basis-1/2 flex h-full">
-                <div className=" m-auto h-screen w-full  flex flex-col items-center">
-                    <div className=" flex w-full h-full">
-                        <div className=" basis-1/2 bg-cover bg-center" style={{ backgroundImage: `url("images/staff/anne.jpg")` }}>
-
-                        </div>
-                        <div className=" basis-1/2 flex items-end">
-                            <div className=" p-5 text-sm">
-                                <span className="block text-blue-900 font-semibold ">
-                                    <span >&gt; </span>
-                                    <span className="">Anne Roa</span>
-                                    <span className=" text-black font-medium"> - Managing Director</span>
-                                </span>
-                                <span className=" font-medium">Te rua pōtaki, te pitau whakarei. </span>
-                            </div>
-                        </div>
+            <div className=" pt-10 lg:pt-0 pb-30 xl:pb-0 basis-1/2 flex h-full">
+                <div className=" px-10 xl:p-0 m-auto h-auto md:h-screen w-full  flex flex-col items-center">
+                    <div className=" sm:flex w-full h-auto md:h-full">
+                        <StaffProfile
+                            image={'images/staff/anne.jpg'}
+                            name={'Anne Roa'}
+                            role={'Managing Director'}
+                            tag={'Te rua pōtaki, te pitau whakarei.'}
+                        />
+                        <StaffProfile
+                            image={'images/staff/anne.jpg'}
+                            name={'Anne Roa'}
+                            role={'Managing Director'}
+                            tag={'Te rua pōtaki, te pitau whakarei.'}
+                        />
                     </div>
 
-                    <div className=" flex w-full h-full">
-
-                        <div className=" basis-1/2">
-                            <div className=" p-5 text-sm">
-                                <span className="block text-blue-900 font-semibold ">
-                                    <span >&gt; </span>
-                                    <span className="">Hariru</span>
-                                    <span className=" text-black font-medium"> - Director</span>
-                                </span>
-                                <span className=" font-medium">Te rua pōtaki, te pitau whakarei. </span>
-                            </div>
-                        </div>
-                        <div className=" basis-1/2 bg-cover bg-center" style={{ backgroundImage: `url("images/staff/hariru.png")` }}>
-
-                        </div>
+                    <div className=" sm:flex w-full h-auto md:h-full">
+                        <StaffProfile
+                            image={'images/staff/hariru.png'}
+                            name={'Hariru'}
+                            role={'Director'}
+                            tag={'Te rua pōtaki, te pitau whakarei.'}
+                        />
+                        <StaffProfile
+                            image={'images/staff/hariru.png'}
+                            name={'Hariru'}
+                            role={'Director'}
+                            tag={'Te rua pōtaki, te pitau whakarei.'}
+                        />
                     </div>
 
                 </div>

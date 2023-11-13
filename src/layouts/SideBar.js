@@ -5,14 +5,17 @@ import MenuItem from '../components/MenuItem';
 import { useLocation } from 'react-router-dom';
 
 
-const SideBar = ({ vision, menuItems, isSidebarOpen, toggleSidebar }, props) => {
+const SideBar = ({ vision, menuItems, isSidebarOpen, toggleSidebar, sidebarHeight }, props) => {
     const location = useLocation();
 
     return (
 
 
-        <div className={` bg-white w-72 h-auto flex-col justify-between lg:relative ${isSidebarOpen ? ' absolute flex z-10' : 'hidden '} `}>
-            <div className="px-10">
+        <div className={` bg-white w-72 h-auto flex-col justify-between lg:relative ${isSidebarOpen ? ' absolute flex z-10' : 'hidden '} `}
+            style={{
+                height: sidebarHeight
+            }}>
+            <div className="px-5 lg:px-10">
 
                 <Header vision={vision} />
 

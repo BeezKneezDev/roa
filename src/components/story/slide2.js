@@ -4,16 +4,18 @@ import LogoContentTile from "../LogoContentTile";
 
 function Slide2() {
     return (
-        <div className=" ">
-            <header className="pb-10"><h3 className="text-center font-semibold text-5xl "><span className=" uppercase">Roa Ltd</span> Overview</h3></header>
-            <div className=" flex">
-                <div className="flex basis-1/2 border-r-2 border-dotted mb-5 pb-2"> {/* first col */}
-                    <div className=" p-6 flex flex-col justify-around">
+        <div className=" px-5 py-20 lg:py-12">
+            <header className="pb-10">
+                <h3 className=" font-semibold text-3xl lg:text-5xl lg:text-center "><span className=" uppercase">Roa Ltd</span> Overview</h3>
+            </header>
+            <div className=" xl:flex">
+                <div className="flex  xl:border-r-2 xl:border-dotted mb-5 pb-2 lg:basis-1/2"> {/* first col */}
+                    <div className="flex flex-col justify-evenly -mt-[10em] sm:-mt-[10%] md:-mt-[10%]   pr-3 lg:mt-0 lg:p-6 lg:justify-around">
                         <img className="" width={80} src="/images/03.png" />
                         <img width={80} src="/images/03.png" />
                         <img width={80} src="/images/03.png" />
                     </div>
-                    <div className=" pr-20 flex-1">
+                    <div className=" lg:pr-20 flex-1">
                         <ContentTile
                             heading={'Te Whakakitenga'}
                             description={'Our vision is to transform the accessibility and availability of Te Reo Māori resources.'}
@@ -34,7 +36,7 @@ function Slide2() {
 
                     </div>
                 </div>
-                <div className=" basis-1/2 pt-10 pl-16 pr-20"> {/* second col */}
+                <div className=" basis-1/2 pt-10  lg:pl-16 lg:pr-20"> {/* second col */}
 
                     <div className="flex relative">
                         <div className=" basis-3/5 ">
@@ -48,7 +50,7 @@ function Slide2() {
                             />
                         </div>
                         <div className=" basis-2/5 absolute -right-10 bottom-0">
-                            <img className=" " width={350} src="images/0.png" />
+                            <img className=" max-w-[250px] lg:max-w-[350px]" src="images/0.png" />
                         </div>
                     </div>
                     <div>

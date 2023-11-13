@@ -24,7 +24,7 @@ const ContentSlider = ({ slides, currentIndex, setCurrentIndex }) => {
 
 
     return (
-        <div className="content-slider m-auto relative pt-20 lg:py-12">
+        <div className="content-slider m-auto relative py-20 lg:py-12">
 
             <div className="slide ">
                 <div className=" m-auto lg:w-[780px] px-8 lg:px-2  ">

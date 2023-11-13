@@ -4,9 +4,12 @@ import SideBar from "../layouts/SideBar";
 
 const Resources = () => {
     const [isSidebarOpen, setSidebarOpen] = useState(true);
+    const [sidebarHeight, setSidebarHeight] = useState('100vh'); // Set an initial height, e.g., 100vh (100% of the viewport height)
 
     const toggleSidebar = () => {
         setSidebarOpen(!isSidebarOpen);
+        const documentHeight = document.documentElement.scrollHeight;
+        setSidebarHeight(`${documentHeight}px`);
     };
 
     useEffect(() => {
@@ -39,6 +42,7 @@ const Resources = () => {
             </button>
 
             <SideBar
+                sidebarHeight={sidebarHeight}
                 isSidebarOpen={isSidebarOpen} // Pass the state to SideBar
                 toggleSidebar={toggleSidebar} // Pass the function to SideBar
                 vision={'Transforming the accessibility and availability of Te Reo Māori resources'}

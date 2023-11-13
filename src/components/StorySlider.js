@@ -18,10 +18,12 @@ const StorySlider = ({ stories, currentIndex, setCurrentIndex }) => {
   };
 
   return (
-    <div className="story-slider w-full h-screen relative flex items-center " style={{ backgroundImage: `url("images/bg-white.jpg")` }}>
+    <div className="story-slider w-full  relative flex items-center overflow-hidden " style={{ backgroundImage: `url("images/bg-white.jpg")` }}>
       {stories[currentIndex]}
-      <div className=' fixed  bottom-10 w-full  text-center story-nav'>
-        <button onClick={goToPreviousSlide}>Previous</button> | <button onClick={goToNextSlide}>Next</button>
+      <div className=' fixed  bottom-10 w-full  text-center story-nav '>
+        <div className='  bg-slate-100 lg:bg-white inline-block py-1 px-3 rounded-xl'>
+          <button onClick={goToPreviousSlide}>Previous</button> | <button onClick={goToNextSlide}>Next</button>
+        </div>
       </div>
     </div>
   );
