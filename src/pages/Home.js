@@ -41,7 +41,7 @@ const Home = () => {
             menuItems={menuItems}
         >
             <div
-                className={` w-full h-full mx-auto  transition-opacity duration-1000 ease-in-out bg-container`}
+                className={` w-full h-auto mx-auto  transition-opacity duration-1000 ease-in-out bg-container`}
                 style={{
                     backgroundImage: `url("images/bg-blue.jpg")`,
                 }}

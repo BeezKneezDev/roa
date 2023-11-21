@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import SideBar from './SideBar';
 
-
-const Main = ({vision, menuItems, children}) => {
+const Main = ({ vision, menuItems, children }) => {
     const location = useLocation();
 
     const [isSidebarOpen, setSidebarOpen] = useState(true);
-    const [sidebarHeight, setSidebarHeight] = useState('100vh'); // Set an initial height, e.g., 100vh (100% of the viewport height)
+    const [sidebarHeight, setSidebarHeight] = useState('100vh');
 
     const toggleSidebar = () => {
         setSidebarOpen(!isSidebarOpen);
@@ -16,53 +15,48 @@ const Main = ({vision, menuItems, children}) => {
     };
 
     useEffect(() => {
-        // Function to handle window resize event
         const handleResize = () => {
-            // Check the window width and set isSidebarOpen accordingly
             const documentHeight = document.documentElement.scrollHeight;
             setSidebarHeight(`${documentHeight}px`);
             if (window.innerWidth >= 1024) {
-                setSidebarOpen(true); // Show sidebar on large screens
+                setSidebarOpen(true);
             } else {
-                setSidebarOpen(false); // Hide sidebar on smaller screens
+                setSidebarOpen(false);
             }
         };
 
-        // Add event listener for window resize
         window.addEventListener('resize', handleResize);
 
-        // Clean up the event listener on component unmount
         return () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
 
     return (
-
-
         <div className="flex flex-no-wrap min-h-screen">
-
-            <button
-                className={`lg:hidden z-20 fixed top-0 left-0 m-4 bg-gray-500 p-2 rounded-lg text-white`}
+            <div
+                className={`lg:hidden z-20 fixed top-0 left-0 m-4 text-white flex h-[50px] cursor-pointer`}
                 onClick={toggleSidebar}
             >
-                Menu
-            </button>
+                <div className=' brand-blue-bg h-full w-[25px] '></div>
+                <div className=' bg-black h-full w-[8px] '></div>
+                <img className='ml-1 p-1' src='/images/menu-logo.png' />
+            </div>
 
             <SideBar
                 sidebarHeight={sidebarHeight}
-                isSidebarOpen={isSidebarOpen} // Pass the state to SideBar
-                toggleSidebar={toggleSidebar} // Pass the function to SideBar
+                isSidebarOpen={isSidebarOpen}
+                toggleSidebar={toggleSidebar}
                 vision={vision}
                 menuItems={menuItems}
             />
 
-        {/* Main Content */}
-        {children}
-
+            {/* Main Content */}
+ 
+                {children}
+    
         </div>
+    );
+};
 
-    )
-}
-
-export default Main
+export default Main;

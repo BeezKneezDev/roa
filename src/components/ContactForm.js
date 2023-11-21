@@ -30,8 +30,8 @@ function ContactForm() {
     return (
 
         <div className=' m-auto'>
-            <h2 className=" text-white text-center text-5xl font-medium pb-4">Contact Us</h2>
-            <div className=" w-[600px] mx-auto my-10 p-6 bg-white rounded-lg shadow-xl">
+            <h2 className=" text-white text-center text-4xl lg:text-5xl font-medium pb-0 mb:pb-4">Contact Us</h2>
+            <div className=" w-[360px] sm:w-[500px] md:w-[600px] mx-auto my-10 p-6 bg-white rounded-lg shadow-xl">
 
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
@@ -69,7 +69,7 @@ function ContactForm() {
                             className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-400"
                         ></textarea>
                     </div>
-                    <button type="submit" className="bg-green-600 text-white px-4 py-2 rounded-full hover:bg-green-700 focus:outline-none focus:bg-blue-600">
+                    <button type="submit" className="brand-blue-bg text-white px-4 py-2 rounded-full hover:bg-blue-900 focus:outline-none focus:bg-blue-900">
                         Submit
                     </button>
                 </form>

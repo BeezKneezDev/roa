@@ -28,24 +28,14 @@ const KuraReo = ({ setCurrentIndex }) => {
             css: 'text-sm ml-5'
         },
         {
-            text: 'SMALL ORGANIZATION',
-            handleClick: handleButtonClick.bind(this, 1),
-            css: 'text-sm ml-5'
-        },
-        {
             text: 'COMMUNITY PACKAGE',
-            handleClick: handleButtonClick.bind(this, 1),
-            css: 'text-sm ml-5'
-        },
-        {
-            text: 'SUPPLEMENTARY',
             handleClick: handleButtonClick.bind(this, 1),
             css: 'text-sm ml-5'
         },
         {
             text: 'ENQUIRE NOW',
             href: 'mailto:admin@roaltd.co.nz',
-            css: 'text-green-500 font-bold mt-5'
+            css: 'brand-green font-bold mt-5'
         },
 
     ];

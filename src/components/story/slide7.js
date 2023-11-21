@@ -39,6 +39,13 @@ function Slide7() {
         <SlideContent2
             heading={'Rau Ringa'}
             items={items}
+            colour={'#F5BA18'}
+            classes={'scale-image'}
+            image1={'/images/slide7/1.png'}
+            image2={'/images/slide7/2.png'}
+            image3={'/images/slide7/3.png'}
+            image4={'/images/slide7/4.png'}
+            image5={'/images/slide7/5.png'}
             vision={'<p>Tūtaki atu ana a Rau Māreikura ki a Kea haututū. Kea nanakia, Kea raweke, Kea tinihanga e. Koia te tohunga whāngai i te ngao pākiki.</p><p>Tau rawa ake ana a Rau Māreikura ki ngā maunga whakahī, ki ngā awa kōpikopiko, ki ngā marae manomano.</p><p>Tohatohaina ana e Rau Māreikura te ngao pākiki ki ngā uri o Te Wao Tapunui a Tāne.</p><p>Toro ana a Rau Māreikura ki ngā pūkenga o Kea kia horapa te ngao pākiki ki ngā tōpito o Te Wao Tapunui a Tāne.</p><p>Ka tupu te atamai, ka hua te tākaro, ka puāwai te auaha. Ka puta ko Rau Ringa.</p>'} />
     );
 }

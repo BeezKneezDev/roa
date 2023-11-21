@@ -9,7 +9,7 @@ function Slide3() {
             heading={'Te Whakakitenga'}
             subheading={'What is our vision?'}
             blurb={'To transform the accessibility and availability of Te Reo Māori resources.'}
-            image={"images/0.png"}
+            image={"images/stage1.png"}
             vision={'Rā runga mai o te hau maiangi, pā mai ai te reo Māori, koia ko Rau Māreikura. He rau tata, he rau ngāwari, he rau waiwaiā.'}
         />
 

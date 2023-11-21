@@ -1,9 +1,40 @@
+.brand-green {
+  color: #2bae5b;
+}
+
+.brand-blue {
+  color: #272661;
+}
+
+.brand-yellow {
+  color: #F5BA18;
+}
+
+.brand-green-bg {
+  background-color: #2bae5b;
+}
+
+.brand-blue-bg {
+  background-color: #272661;
+}
+
+.brand-yellow-bg {
+  background-color: #F5BA18;
+}
+
+
+
 .dynamic-image {
   max-height: inherit;
 }
 
+.scale-image {
+  --tw-scale-x: 2;
+  --tw-scale-y: 2;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .content-slider {
-  //display: flex;
+  
   align-items: center;
   justify-content: center;
   position: relative;

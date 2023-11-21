@@ -27,11 +27,11 @@ const ContentSlider = ({ slides, currentIndex, setCurrentIndex }) => {
         <div className="content-slider m-auto relative py-20 lg:py-12">
 
             <div className="slide ">
-                <div className=" m-auto lg:w-[780px] px-8 lg:px-2  ">
-                    <h2 className=" text-white text-center text-5xl font-medium pb-4">{slides[currentIndex].heading}</h2>
+                <div className=" m-auto lg:w-[780px] px-5 lg:px-2  ">
+                    <h2 className=" text-white text-center text-4xl lg:text-5xl font-medium pb-4">{slides[currentIndex].heading}</h2>
                     <h3 className=" text-white text-center text-lg font-medium pb-4">{slides[currentIndex].subheading}</h3>
-                    <div className=" bg-white p-8 lg:p-12 rounded-lg shadow-xl">
-                        <span className=" block text-center text-4xl font-semibold pb-2">{slides[currentIndex].price}</span>
+                    <div className=" bg-white p-5 lg:p-8 lg:p-12 rounded-lg shadow-xl">
+                        <span className=" block text-center text-3xl lg:text-4xl font-semibold pb-2">{slides[currentIndex].price}</span>
 
                         <div className={slides[currentIndex].classes}>
                             {slides[currentIndex].blurb && <div dangerouslySetInnerHTML={{ __html: slides[currentIndex].blurb }}></div>}
@@ -52,7 +52,7 @@ const ContentSlider = ({ slides, currentIndex, setCurrentIndex }) => {
 
             <div className='text-center py-10'>
                 <button className="prev-button px-2" onClick={goToPreviousSlide}>
-                    <IconLeft />
+                    <IconLeft className='shadow' />
                 </button>
                 <button className="next-button px-2" onClick={goToNextSlide}>
                     <IconRight />

@@ -37,7 +37,7 @@ const Contact = () => {
             vision={'Transforming the accessibility and availability of Te Reo Māori resources.'}
             menuItems={menuItems}
         >
-            <div className=" w-full h-full mx-auto" style={{ backgroundImage: `url("images/bg-green.jpg")` }}>
+            <div className=" w-full h-automx-auto" style={{ backgroundImage: `url("images/bg-blue.jpg")` }}>
                  <div className="w-full h-full flex">
                      <ContactForm />
                  </div>

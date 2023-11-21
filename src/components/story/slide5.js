@@ -22,30 +22,31 @@ function Slide5() {
                     <div className=" sm:flex w-full h-auto md:h-full">
                         <StaffProfile
                             image={'images/staff/anne.jpg'}
-                            name={'Anne Roa'}
+                            name={'Anne Roa (BA, BCS, Te Panekiretanga o Te Reo, TEFL)'}
                             role={'Managing Director'}
                             tag={'Te rua pōtaki, te pitau whakarei.'}
                         />
                         <StaffProfile
-                            image={'images/staff/anne.jpg'}
-                            name={'Anne Roa'}
-                            role={'Managing Director'}
-                            tag={'Te rua pōtaki, te pitau whakarei.'}
+                            image={'images/staff/hariru.png'}
+                            name={'Hariru Roa (MA, BSci, BMPA, Te Panekiretanga o Te Reo)'}
+                            role={'Director'}
+                            tag={'Te rau rengarenga, te rau kawariki o Roa Ltd.'}
                         />
+                        
                     </div>
 
                     <div className=" sm:flex w-full h-auto md:h-full">
                         <StaffProfile
-                            image={'images/staff/hariru.png'}
-                            name={'Hariru'}
+                            image={'images/staff/moana.jpg'}
+                            name={'Moana Turner (BA, GradDip Teaching, Registered Teacher)'}
                             role={'Director'}
-                            tag={'Te rua pōtaki, te pitau whakarei.'}
+                            tag={'Te rau pākiki, te rau atawhai o Roa Ltd.'}
                         />
                         <StaffProfile
-                            image={'images/staff/hariru.png'}
-                            name={'Hariru'}
+                            image={'images/staff/raukura.jpg'}
+                            name={'Dr Raukura Roa (PhD, MA, BAHons, BMPA, Fulbright, Te Panekiretanga o Te Reo)'}
                             role={'Director'}
-                            tag={'Te rua pōtaki, te pitau whakarei.'}
+                            tag={'Te rau mātāmua, te tuakana kūmara o Roa Ltd.'}
                         />
                     </div>
 

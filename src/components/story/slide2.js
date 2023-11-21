@@ -11,8 +11,8 @@ function Slide2() {
             <div className=" xl:flex">
                 <div className="flex  xl:border-r-2 xl:border-dotted mb-5 pb-2 lg:basis-1/2"> {/* first col */}
                     <div className="flex flex-col justify-evenly -mt-[10em] sm:-mt-[10%] md:-mt-[10%]   pr-3 lg:mt-0 lg:p-6 lg:justify-around">
-                        <img className="" width={80} src="/images/03.png" />
-                        <img width={80} src="/images/03.png" />
+                        <img className="" width={80} src="/images/slide2/999.png" />
+                        <img width={80} src="/images/slide2/2222.png" />
                         <img width={80} src="/images/03.png" />
                     </div>
                     <div className=" lg:pr-20 flex-1">
@@ -49,24 +49,24 @@ function Slide2() {
                                 description={'Roa Ltd has three offerings.'}
                             />
                         </div>
-                        <div className=" basis-2/5 absolute -right-10 bottom-0">
-                            <img className=" max-w-[250px] lg:max-w-[350px]" src="images/0.png" />
+                        <div className=" basis-2/5 absolute   -right-5 xl:-right-16 bottom-0">
+                            <img className=" max-w-[250px] lg:max-w-[350px] px-12 pb-5" src="images/stage4.png" />
                         </div>
                     </div>
                     <div>
 
 
                         <LogoContentTile
-                            image={'images/logo-ringa.png'}
-                            description={'creates and publishes high-quality physical Te Reo Māori Resources.'}
+                            image={'images/slide2/logo1.png'}
+                            description={'Creates and publishes high-quality physical Te Reo Māori Resources.'}
                         />
                         <LogoContentTile
-                            image={'images/logo-kura.png'}
-                            description={'delivers Te Reo Māori programmes, including personal and professional coaching and tutoring.'}
+                            image={'images/slide2/logo2.png'}
+                            description={'Delivers Te Reo Māori programmes, including personal and professional coaching and tutoring.'}
                         />
                         <LogoContentTile
-                            image={'images/logo-mati.png'}
-                            description={'is our strategic planning and research division that is still in development.'}
+                            image={'images/slide2/logo3.png'}
+                            description={'Is our strategic planning and research division that is still in development.'}
                         />
 
 
