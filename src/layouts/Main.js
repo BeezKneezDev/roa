@@ -1,36 +1,46 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import SideBar from './SideBar';
+import { setSidebarHeight, setSidebarOpen } from '../slices/sidebarSlice';
+import IconMenuUnfold from './../icons/menu-unfold';
+import IconMenuFold from '../icons/menu-fold';
 
 const Main = ({ vision, menuItems, children }) => {
-    const location = useLocation();
+    const dispatch = useDispatch();
 
-    const [isSidebarOpen, setSidebarOpen] = useState(true);
-    const [sidebarHeight, setSidebarHeight] = useState('100vh');
+    const sidebarHeight = useSelector((state) => state.sidebar.sidebarHeight);
+    const isSidebarOpen = useSelector((state) => state.sidebar.isSidebarOpen);
 
     const toggleSidebar = () => {
-        setSidebarOpen(!isSidebarOpen);
+        dispatch(setSidebarOpen(!isSidebarOpen));
+        // Assuming you still want to update the sidebar height based on document height
         const documentHeight = document.documentElement.scrollHeight;
-        setSidebarHeight(`${documentHeight}px`);
+        dispatch(setSidebarHeight(`${documentHeight}px`));
     };
 
     useEffect(() => {
         const handleResize = () => {
             const documentHeight = document.documentElement.scrollHeight;
-            setSidebarHeight(`${documentHeight}px`);
+            dispatch(setSidebarHeight(`${documentHeight}px`));
+
+            // Dispatch action to update isSidebarOpen in Redux state
             if (window.innerWidth >= 1024) {
-                setSidebarOpen(true);
+                dispatch(setSidebarOpen(true));
             } else {
-                setSidebarOpen(false);
+                dispatch(setSidebarOpen(false));
             }
         };
+
+        const documentHeight = document.documentElement.scrollHeight;
+        const newSidebarHeight = documentHeight > 670 ? `${documentHeight}px` : '100%';
+        dispatch(setSidebarHeight(newSidebarHeight));
 
         window.addEventListener('resize', handleResize);
 
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, []);
+    }, [dispatch]);
 
     return (
         <div className="flex flex-no-wrap min-h-screen">
@@ -38,9 +48,10 @@ const Main = ({ vision, menuItems, children }) => {
                 className={`lg:hidden z-20 fixed top-0 left-0 m-4 text-white flex h-[50px] cursor-pointer`}
                 onClick={toggleSidebar}
             >
-                <div className=' brand-blue-bg h-full w-[25px] '></div>
-                <div className=' bg-black h-full w-[8px] '></div>
-                <img className='ml-1 p-1' src='/images/menu-logo.png' />
+                {!isSidebarOpen && <IconMenuUnfold />}
+                {isSidebarOpen && <IconMenuFold />}
+
+
             </div>
 
             <SideBar
@@ -52,9 +63,7 @@ const Main = ({ vision, menuItems, children }) => {
             />
 
             {/* Main Content */}
- 
-                {children}
-    
+            {children}
         </div>
     );
 };

@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Main from '../layouts/Main';
 
+import { useDispatch } from 'react-redux';
+import { setSidebarOpen } from '../slices/sidebarSlice';
+
 const Home = () => {
+
+    const dispatch = useDispatch();
+
     const menuItems = [
         {
             text: 'About',
@@ -28,15 +34,17 @@ const Home = () => {
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        // Simulate loading time for demonstration purposes
+        if (window.innerWidth <= 1023) {
+            dispatch(setSidebarOpen(false));
+        }
         setTimeout(() => {
             setIsLoaded(true);
         }, 1000); // Adjust the delay as needed
-        
-    }, []);
+
+    }, [dispatch]);
 
     return (
-        <Main 
+        <Main
             vision={'Transforming the accessibility and availability of Te Reo Māori resources.'}
             menuItems={menuItems}
         >
@@ -48,7 +56,7 @@ const Home = () => {
             >
                 <div className="w-full h-full flex">
                     <img
-                        className={`logo-container h-full m-auto ${isLoaded ? 'scale-100' : 'scale-0'  // Apply the scale class based on the loaded state
+                        className={`logo-container w-[90%]  m-auto ${isLoaded ? 'scale-100' : 'scale-0'  // Apply the scale class based on the loaded state
                             } transform transition-transform duration-1000 ease-in-out`}
                         src="images/logo.svg"
                         alt="Logo"

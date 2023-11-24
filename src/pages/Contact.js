@@ -2,8 +2,19 @@ import React from 'react';
 import ContactForm from "../components/ContactForm";
 import Main from '../layouts/Main';
 
+import { useDispatch } from 'react-redux';
+import { setSidebarOpen } from '../slices/sidebarSlice';
+import { useEffect } from 'react';
 
 const Contact = () => {
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (window.innerWidth <= 1023) {
+            dispatch(setSidebarOpen(false));
+        }
+    }, [dispatch]);
 
     const menuItems = [
         {
@@ -33,17 +44,17 @@ const Contact = () => {
     ];
 
     return (
-        <Main 
+        <Main
             vision={'Transforming the accessibility and availability of Te Reo Māori resources.'}
             menuItems={menuItems}
         >
             <div className=" w-full h-automx-auto" style={{ backgroundImage: `url("images/bg-blue.jpg")` }}>
-                 <div className="w-full h-full flex">
-                     <ContactForm />
-                 </div>
+                <div className="w-full h-full flex">
+                    <ContactForm />
+                </div>
             </div>
         </Main>
-        
+
     );
 };
 

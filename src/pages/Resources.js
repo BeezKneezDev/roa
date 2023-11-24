@@ -1,10 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import SideBar from "../layouts/SideBar";
+import React, { useEffect } from 'react';
 import Main from '../layouts/Main';
 
+import { useDispatch } from 'react-redux';
+import { setSidebarOpen } from '../slices/sidebarSlice';
 
 const Resources = () => {
-    
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (window.innerWidth <= 1023) {
+            dispatch(setSidebarOpen(false));
+        }
+    }, []);
+
     const menuItems = [
         {
             text: 'Direct Links',
@@ -19,9 +28,9 @@ const Resources = () => {
         }
 
     ];
-    
+
     return (
-        <Main 
+        <Main
             vision={'Transforming the accessibility and availability of Te Reo Māori resources.'}
             menuItems={menuItems}
         >
@@ -58,7 +67,7 @@ const Resources = () => {
             </div>
 
         </Main>
-        
+
     );
 };
 

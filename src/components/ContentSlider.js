@@ -1,18 +1,28 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { setCurrentIndex } from '../slices/sliderSlice';
 import IconLeft from './../icons/IconLeft';
 import IconRight from './../icons/IconRight';
+import { setSidebarHeight } from '../slices/sidebarSlice';
+
 
 const ContentSlider = ({ slides, currentIndex, setCurrentIndex }) => {
+
+    const dispatch = useDispatch();
+
     const goToPreviousSlide = () => {
         const newIndex = currentIndex === 0 ? slides.length - 1 : currentIndex - 1;
         setCurrentIndex(newIndex);
+        const documentHeight = document.documentElement.scrollHeight;
+        dispatch(setSidebarHeight(`${documentHeight}px`));
+
     };
 
     const goToNextSlide = () => {
         const newIndex = currentIndex === slides.length - 1 ? 0 : currentIndex + 1;
         setCurrentIndex(newIndex);
+        const documentHeight = document.documentElement.scrollHeight;
+        dispatch(setSidebarHeight(`${documentHeight}px`));
     };
 
     const goToSlide = (index) => {

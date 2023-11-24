@@ -1,10 +1,11 @@
-import * as React from "react";
+import React, { useState, useEffect } from 'react';
 import StaffProfile from "../StaffProfile";
 
 
 function Slide5() {
+
     return (
-        <div className=" xl:flex px-5  py-20 lg:p-0">
+        <div className=" xl:flex px-5 w-full  py-20 lg:p-0">
             <div className=" basis-1/2 flex">
                 <div className=" xl:m-auto pt-10 px-10 xl:p-28">
                     <h3 className=" font-bold text-3xl ">Ngā Kaiarataki</h3>
@@ -18,7 +19,7 @@ function Slide5() {
                 </div>
             </div>
             <div className=" pt-10 lg:pt-0 pb-30 xl:pb-0 basis-1/2 flex h-full">
-                <div className=" px-10 xl:p-0 m-auto h-auto md:h-screen w-full  flex flex-col items-center">
+                <div className=" px-10 xl:p-0 m-auto h-auto xl:h-screen w-full  flex flex-col items-center">
                     <div className=" sm:flex w-full h-auto md:h-full">
                         <StaffProfile
                             image={'images/staff/anne.jpg'}
@@ -32,7 +33,7 @@ function Slide5() {
                             role={'Director'}
                             tag={'Te rau rengarenga, te rau kawariki o Roa Ltd.'}
                         />
-                        
+
                     </div>
 
                     <div className=" sm:flex w-full h-auto md:h-full">

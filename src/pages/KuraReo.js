@@ -4,8 +4,19 @@ import { setCurrentIndex } from '../slices/sliderSlice';
 import ContentSlider from '../components/ContentSlider';
 import Main from '../layouts/Main';
 
+import { useDispatch } from 'react-redux';
+import { setSidebarOpen } from '../slices/sidebarSlice';
+import { useEffect } from 'react';
 
 const KuraReo = ({ setCurrentIndex }) => {
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (window.innerWidth <= 1023) {
+            dispatch(setSidebarOpen(false));
+        }
+    }, []);
 
     const handleButtonClick = function (index) {
         setCurrentIndex(index - 1); // Dispatch the setCurrentIndex action
@@ -42,7 +53,7 @@ const KuraReo = ({ setCurrentIndex }) => {
 
     return (
 
-        <Main 
+        <Main
             vision={'Delivering Te Reo Māori programmes that promote cultural intelligence while fostering a love for Te Reo Māori.'}
             menuItems={menuItems}
         >
@@ -52,7 +63,7 @@ const KuraReo = ({ setCurrentIndex }) => {
                 </div>
             </div>
         </Main>
-        
+
     );
 };
 

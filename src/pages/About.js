@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Slide2 from '../components/story/slide2';
 import Slide1 from '../components/story/slide1';
 import Slide3 from "../components/story/slide3";
@@ -8,11 +8,12 @@ import Slide6 from "../components/story/slide6";
 import Slide7 from "../components/story/slide7";
 import Slide8 from "../components/story/slide8";
 
-import StorySlider from "../components/StorySlider";
-
-import { connect } from 'react-redux';
-import { setCurrentIndex } from "../slices/storySliderSlice";
 import Main from '../layouts/Main';
+import { connect, useDispatch } from 'react-redux';
+import StorySlider from "../components/StorySlider";
+import { setSidebarOpen } from '../slices/sidebarSlice';
+import { setCurrentIndex } from "../slices/storySliderSlice";
+
 
 const stories = [
   <Slide1 />,
@@ -27,6 +28,14 @@ const stories = [
 
 
 const About = ({ setCurrentIndex }) => {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (window.innerWidth <= 1023) {
+      dispatch(setSidebarOpen(false));
+    }
+  }, [dispatch]);
 
   const handleButtonClick = function (index) {
     setCurrentIndex(index - 1); // Dispatch the setCurrentIndex action
@@ -70,7 +79,7 @@ const About = ({ setCurrentIndex }) => {
   ];
 
 
-  
+
 
   return (
 

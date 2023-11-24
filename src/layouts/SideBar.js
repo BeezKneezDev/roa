@@ -4,14 +4,10 @@ import Header from '../components/Header';
 import MenuItem from '../components/MenuItem';
 import { useLocation } from 'react-router-dom';
 
-
 const SideBar = ({ vision, menuItems, isSidebarOpen, toggleSidebar, sidebarHeight }, props) => {
     const location = useLocation();
 
-    
     return (
-
-
         <div className={` bg-white w-72 h-auto flex-col justify-between lg:relative ${isSidebarOpen ? ' absolute flex z-10' : 'hidden '} `}
             style={{
                 height: sidebarHeight
@@ -35,11 +31,9 @@ const SideBar = ({ vision, menuItems, isSidebarOpen, toggleSidebar, sidebarHeigh
                 </ul>
 
             </div>
-
             <Social />
 
         </div >
-
     )
 }
 
